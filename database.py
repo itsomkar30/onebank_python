@@ -1,3 +1,4 @@
+#Database Management Banking
 import mysql.connector as sql
 
 mydb = sql.connect(
@@ -5,27 +6,29 @@ mydb = sql.connect(
     user="root",
     passwd="itsomkar30",
     database="bank"
-
 )
 
 cursor = mydb.cursor()
 
+def db_query(str):
+    cursor.execute(str)
+    result = cursor.fetchall()
+    return result
 
-def createusertable():
+def createcustomertable():
     cursor.execute('''
-        create table if not exists customers(
-        username varchar(20),
-        password varchar(20),
-        name varchar(20),
-        age integer,
-        city varchar(20),
-        account_number integer,
-        status boolean)
+                create table if not exists customers
+                (username varchar(20) not null,
+                password varchar(20) not null,
+                name varchar(20) not null,
+                age integer not null,
+                city varchar(20) not null,
+                balance integer not null,
+                account_number integer not null,
+                status boolean not null)
     ''')
-
 
 mydb.commit()
 
-if __name__=="__main__":
-    createusertable()
-
+if __name__ == "__main__":
+    createcustomertable()

@@ -42,6 +42,7 @@ while status:
                         bobj.deposit(amount)
                         mydb.commit()
                         status = False
+                        # break
                     except ValueError:
                         print("Enter Valid Input ie. Number")
                         continue
@@ -54,6 +55,7 @@ while status:
                         bobj.withdraw(amount)
                         mydb.commit()
                         status = False
+                        # break
 
                     except ValueError:
                         print("Enter Valid Input ie. Number")
@@ -67,6 +69,7 @@ while status:
                         bobj.fundtransfer(receive, amount)
                         mydb.commit()
                         status = False
+                        # break
                     except ValueError:
                         print("Enter Valid Input ie. Number")
                         continue

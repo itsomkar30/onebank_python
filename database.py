@@ -17,15 +17,17 @@ def db_query(str):
 
 def createcustomertable():
     cursor.execute('''
-                create table if not exists customers
-                (username varchar(20) not null,
-                password varchar(20) not null,
-                name varchar(20) not null,
-                age integer not null,
-                city varchar(20) not null,
-                balance integer not null,
-                account_number integer not null,
-                status boolean not null)
+                CREATE TABLE IF NOT EXISTS customers
+                (username VARCHAR(20) NOT NULL,
+                password VARCHAR(20) NOT NULL,
+                name varchar(20) NOT NULL,
+                age INTEGER NOT NULL,
+                city VARCHAR(20) NOT NULL,
+                balance INTEGER NOT NULL,
+                account_number INTEGER NOT NULL,
+                credit_name varchar(50) not null,
+                credit_bal integer not null,
+                status BOOLEAN NOT NULL)
     ''')
 
 mydb.commit()

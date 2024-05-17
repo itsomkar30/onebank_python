@@ -3,9 +3,9 @@ import mysql.connector as sql
 
 mydb = sql.connect(
     host="localhost",
-    user="root",
-    passwd="itsomkar30",
-    database="bank"
+    user="root", #your_database_user
+    passwd="password", #your_database_password
+    database="bank" #database_name
 )
 
 cursor = mydb.cursor()
